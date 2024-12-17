@@ -1,0 +1,130 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>舆情分析系统</title>
+    <link rel="stylesheet" href="{% static 'css/senti_analysis.css'%}">
+</head>
+
+<body>
+<div class="main">
+    <div class="header">
+        <div class="header-left ">
+            <a href="#" class="btn">
+                功能1
+            </a>
+            <a href="#" class="btn">
+                功能2
+            </a>
+            <a href="#" class="btn">
+                功能3
+            </a>
+
+        </div>
+        <div class="header-title">
+            <div class="header-img"></div>
+            舆情分析系统
+        </div>
+        <div class="header-right ">
+            <a href="#" class="btn btn1">
+                功能4
+            </a>
+
+            <a href="#" class="btn btn1">
+                功能5
+            </a>
+
+            <a href="#" class="btn btn1">
+                功能6
+            </a>
+
+        </div>
+        <div class="header-bottom "></div>
+
+    </div>
+
+    <ul class="center">
+        <li class="center-left ">
+            <div class="left-top boxall ">
+                <div class="title">新闻选择</div>
+                <div class="boxnav wenzi">
+                    <form class="input_news">
+                        <select name="news" class="select_news">
+                            {% for news in form %}
+                            <option>{{news.title}}</option>
+                            {% endfor %}
+                        </select>
+                        <div class="submit_button">
+                            <input value="提交" type="submit">
+                        </div>
+                    </form>
+                    <p>---->🡅选择新闻进行分析</p>
+                    <form class="input_keys">
+                            <input type="text" class="text-input">
+                            <div class="submit_button">
+                                <input value="提交" type="submit">
+                            </div>
+                    </form>
+                    <p>---->🡅输入关键词进行分析</p>
+                    <div class="start_button">
+                        <button>分析</button>
+                    </div>
+                </div>
+
+            </div>
+            <div class="left-bottom boxall ">
+                <div class="title">饼图</div>
+                <div class="boxnav" id="senti_pie"></div>
+            </div>
+        </li>
+        <li class="center-cen ">
+            <div class="cen-top boxall ">
+                <div class="top-title">
+                    <span>xxx评论IP分布</span>
+                </div>
+                <div class="top-bottom" id="map"></div>
+            </div>
+            <div class="cen-bottom boxall ">
+                <div class="title">词云</div>
+                <div class="boxnav">
+                    <div id="chart4" class="allnav"></div>
+                </div>
+
+            </div>
+        </li>
+        <li class="center-right ">
+            <div class="right-top boxall ">
+                <div class="title">评论展示</div>
+
+                <div class="boxnav" style="overflow: hidden;">
+                    <div id="echart5" class="allnav" style="width: 50%;float: left; padding: 5%;"></div>
+                    <div id="echart3" class="allnav" style="width: 50%;float: left;  padding: 5%;"></div>
+                    <!-- <div id="echart4" class="allnav" style="width: 33%;float: left;"></div> -->
+
+                </div>
+
+            </div>
+        </li>
+    </ul>
+
+
+</div>
+<script src="{% static 'js/jquery.min.js' %}"></script>
+<script src="{% static 'js/echarts.min.js' %}"></script>
+<script src="{% static 'js/senti_pie.js' %}"></script>
+<script src="{% static 'js/china.js' %}"></script>
+<script src="{% static 'js/map.js' %}"></script>
+<script src="{% static 'js/echarts-gl.min.js' %}"></script>
+<!--&lt;!&ndash;    <script type="text/javascript" src="{% static 'js/Odometer.js' %}"></script>&ndash;&gt;-->
+<!--<script>-->
+
+<!--    var odo1 = new Odometer('.Odometer', {-->
+<!--        num: 955012-->
+<!--    });-->
+
+<!--</script>-->
+</body>
+
+</html>

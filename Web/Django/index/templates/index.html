@@ -1,0 +1,117 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>舆情分析系统</title>
+    <link rel="stylesheet" href="{% static 'css/index.css'%}">
+</head>
+
+<body>
+<div class="main">
+    <div class="header">
+        <div class="header-left ">
+            <a href="#" class="btn">
+                功能1
+            </a>
+            <a href="#" class="btn">
+                功能2
+            </a>
+            <a href="#" class="btn">
+                功能3
+            </a>
+
+        </div>
+        <div class="header-title">
+            <div class="header-img"></div>
+            舆情分析系统
+        </div>
+        <div class="header-right ">
+            <a href="#" class="btn btn1">
+                功能4
+            </a>
+
+            <a href="#" class="btn btn1">
+                功能5
+            </a>
+
+            <a href="#" class="btn btn1">
+                功能6
+            </a>
+
+        </div>
+        <div class="header-bottom "></div>
+
+    </div>
+
+    <ul class="center">
+        <li class="center-left ">
+            <div class="left-top boxall ">
+                <div class="title">数据统计</div>
+                <div class="boxnav wenzi">
+                    <div class="gun">
+                        <span>最新热度舆情top20</span>
+                    </div>
+                    <div id="FontScroll" class="myscroll">
+                        <ul>
+                            {% for news in form %}
+                            <li>
+                                <div class="fontInner clearfix">
+                                    <span>{{forloop.counter}}</span>
+                                    <span>{{news.title}}</span>
+                                </div>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </li>
+        <li class="center-cen ">
+            <div class="cen-top boxall ">
+                <div class="title">数据监测</div>
+                <div class="top-bottom" id="map"></div>
+            </div>
+        </li>
+        <li class="center-right ">
+            <div class="right-top boxall ">
+                <div class="title">信息抽取</div>
+                <div class="right-top-bottom"></div>
+
+            </div>
+<!--            <div class="right-cen boxall  ">-->
+<!--                <div class="title">事件识别</div>-->
+<!--                <div class="boxnav">-->
+<!--                    <div id="echart6" class="allnav"></div>-->
+<!--                </div>-->
+
+<!--            </div>-->
+            <div class="right-bottom boxall ">
+                <div class="title">舆情预警</div>
+                <div class="right-bottom-bottom"></div>
+
+            </div>
+        </li>
+    </ul>
+
+
+</div>
+<!--<script src="{% static 'js/jquery.min.js' %}"></script>-->
+<!--<script src="{% static 'js/echarts.min.js' %}"></script>-->
+<!--<script src="{% static 'js/senti_pie.js' %}"></script>-->
+<!--    <script src="{% static 'js/chinamap.js' %}"></script>-->
+<!--<script src="{% static 'js/map.js' %}"></script>-->
+<!--<script src="{% static 'js/echarts-gl.min.js' %}"></script>-->
+<!--&lt;!&ndash;    <script type="text/javascript" src="{% static 'js/Odometer.js' %}"></script>&ndash;&gt;-->
+<!--<script>-->
+
+<!--    var odo1 = new Odometer('.Odometer', {-->
+<!--        num: 955012-->
+<!--    });-->
+
+<!--</script>-->
+</body>
+
+</html>
